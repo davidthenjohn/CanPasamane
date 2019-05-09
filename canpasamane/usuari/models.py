@@ -36,6 +36,7 @@ class User(AbstractBaseUser):
         ("ITA", "Italia"),
     )
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
+    telefon = models.CharField(verbose_name="numero de telefon de contacte", max_length=9 )
     nom_user = models.CharField(verbose_name="nom usuari", max_length=30)
     cognoms_user = models.CharField(verbose_name="nom usuari", max_length=60)
     is_active = models.BooleanField(default=True)
