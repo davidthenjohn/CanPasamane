@@ -38,7 +38,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(verbose_name="email address", max_length=255, unique=True)
     telefon = models.CharField(verbose_name="numero de telefon de contacte", max_length=9 )
     nom_user = models.CharField(verbose_name="nom usuari", max_length=30)
-    cognoms_user = models.CharField(verbose_name="nom usuari", max_length=60)
+    cognoms_user = models.CharField(verbose_name="cognom usuari", max_length=60)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     pais = models.CharField(default="ESP",max_length=3, choices=COUNTRY)
@@ -49,13 +49,13 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS = ["email"]
 
     def get_full_name(self):
-        return self.name
+        return self.nom_user
 
     def get_short_name(self):
-        return self.name
+        return self.nom_user
 
     def __str__(self):
-        return self.username
+        return self.nom_user
 
     def has_perm(self, perm, obj=None):
         return True
