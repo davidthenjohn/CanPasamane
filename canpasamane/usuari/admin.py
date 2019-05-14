@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as modelAdmin
-from usuari.models import User
-from .form import UserChangeForm,UserCreationForm
+from usuari.models import Usuari
+# from .form import UserChangeForm,UserCreationForm
 
 # Register your models here.
 # class UserAdmin(modelAdmin):
@@ -21,5 +21,4 @@ from .form import UserChangeForm,UserCreationForm
 #     ordering = ("nom_user",)
 #     filter_horizontal = ()
 
-admin.site.register(User)
-admin.site.unregister(Group)
+admin.site.register(Usuari)

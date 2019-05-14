@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from usuari.views import LoginView
+# from usuari.views import LoginView
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 
 
 urlpatterns = [
-    url(r"^$", LoginView.as_view(), name="home"),
-    url(r"^u/", include("usuari.urls")),
+    # url(r"^$", LoginView.as_view(), name="home"),
+    # url(r"^u/", include("usuari.urls")),
     url(r"^admin/", admin.site.urls),
 ]
