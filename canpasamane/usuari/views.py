@@ -11,7 +11,17 @@ from .models import Usuari
 def bienvenida(request):
     return render(request, 'bienvenida.html', {})
 
+def historia(request):
+    return render(request, 'historia.html', {})
 
+def activitats(request):
+    return render(request, 'Activitats.html', {})
+
+def contacte(request):
+    return render(request, 'contacte.html', {})
+
+def reserves(request):
+    return render(request, 'reserves.html', {})
 #home
 def home(request):
     return render(request, 'home.html')
@@ -56,12 +66,13 @@ def inicioSesion(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return redirect('usuario:home')
+                return redirect('usuario:bienvenida')
             else:
-                return HttpResponse("Your account was inactive.")
+                return render(request, 'login.html')
         else:
             print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username, password))
-            return HttpResponse("Invalid login details given")
+            print("They used email: {} and password: {}".format(email, password))
+            message = "nope"
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html', {})
