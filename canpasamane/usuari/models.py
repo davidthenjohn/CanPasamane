@@ -17,5 +17,5 @@ class Usuari(models.Model):
         ("ITA", "Italia"),
     )
     usuari = models.OneToOneField(User, on_delete=models.CASCADE)
-    telefon = models.CharField(verbose_name="numero de telefon de contacte", max_length=9 )
+    telefon = models.IntegerField(verbose_name="numero de telefon de contacte")
     pais = models.CharField(default="ESP",max_length=3, choices=COUNTRY)

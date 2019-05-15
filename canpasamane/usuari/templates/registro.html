@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CanPasamane</title>
 </head>
 <body>
-<form method="POST" action="{% url 'usuari:registro' %}">
+<form method="POST" action="{% url 'usuario:registro' %}">
       {% csrf_token %}
-      <div>Nombre usuario: {{ form.username }}</div>
-      <div>Email {{ form.email }}</div>
-      <div>Contraseña: {{ form.password1 }}</div>
-      <div>Repite contraseña: {{ form.password2 }}</div>
+      {{ form.as_p }}
       {{ profile_form.as_p }}
       <button type="submit">Registrar</button>
     </form>

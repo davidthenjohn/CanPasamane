@@ -24,19 +24,18 @@ def registro(request):
         profile_form = UserProfileForm(request.POST)
 
         if form.is_valid() and profile_form.is_valid():
-            usuario = form.save()
+            user = form.save()
 
 
             profile = profile_form.save(commit=False)
             profile.user = user
 
             profile.save()
-
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
 
-            usuari = authenticate(username=username, password=password)
-            login(request, usuari)
+            user = authenticate(username=username, password=password)
+            login(request, user)
 
             return redirect('usuario:home')
     else:
@@ -51,9 +50,9 @@ def registro(request):
 #Iniciar sesion
 def inicioSesion(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(email=email, password=password)
         if user:
             if user.is_active:
                 login(request, user)
