@@ -41,7 +41,7 @@ def registro(request):
             profile.user = user
 
             profile.save()
-            username = form.cleaned_data.get('username')
+            username = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
 
             user = authenticate(username=username, password=password)
@@ -60,9 +60,9 @@ def registro(request):
 #Iniciar sesion
 def inicioSesion(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(email=email, password=password)
+        user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
                 login(request, user)
@@ -71,7 +71,7 @@ def inicioSesion(request):
                 return render(request, 'login.html')
         else:
             print("Someone tried to login and failed.")
-            print("They used email: {} and password: {}".format(email, password))
+            print("They used email: {} and password: {}".format(username, password))
             message = "nope"
             return render(request, 'login.html')
     else:

@@ -9,4 +9,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('usuari.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-]+static('/static/', document_root=settings.STATIC_ROOT, show_indexes=True)
+]
