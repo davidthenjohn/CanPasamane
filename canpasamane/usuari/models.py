@@ -19,3 +19,6 @@ class Usuari(models.Model):
     usuari = models.OneToOneField(User, on_delete=models.CASCADE)
     telefon = models.IntegerField(verbose_name="numero de telefon de contacte")
     pais = models.CharField(default="ESP",max_length=3, choices=COUNTRY)
+
+    def retornaUsers(self):
+        return self.usuari

@@ -39,14 +39,15 @@ def registro(request):
 
             profile = profile_form.save(commit=False)
             profile.user = user
-
+            
+            profile.usuari_id = profile.user.id
             profile.save()
             username = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
-
+            print(profile.telefon)
+            print(profile.user.id)
             user = authenticate(username=username, password=password)
             login(request, user)
-
             return redirect('usuario:home')
     else:
         form = ExtendedUserCreationForm()

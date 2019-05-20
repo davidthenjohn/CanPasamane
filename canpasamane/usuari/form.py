@@ -19,6 +19,8 @@ class ExtendedUserCreationForm(UserCreationForm):
         user.set_password(self.cleaned_data["password1"])
         user.username = self.cleaned_data['email']
         user.firts_name = self.cleaned_data['first_name']
+        
+
         if commit:
             user.save()
         return user
