@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from .form import ExtendedUserCreationForm, UserProfileForm
 from .models import Usuari
@@ -44,8 +45,7 @@ def registro(request):
             profile.save()
             username = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
-            print(profile.telefon)
-            print(profile.user.id)
+
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('usuario:home')
@@ -73,7 +73,7 @@ def inicioSesion(request):
         else:
             print("Someone tried to login and failed.")
             print("They used email: {} and password: {}".format(username, password))
-            message = "nope"
+            messages.add_message(request, messages.INFO, 'Mail o contrasenya incorrecte')
             return render(request, 'login.html')
     else:
         return render(request, 'login.html', {})

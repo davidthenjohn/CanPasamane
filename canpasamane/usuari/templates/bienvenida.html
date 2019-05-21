@@ -18,7 +18,7 @@
               <a class="nav-link" href="{% url 'usuario:bienvenida' %}">Inici <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuario:historia' %}">Historia</a>
+              <a class="nav-link" href="{% url 'usuario:historia' %}">Història</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="{% url 'usuario:activitats' %}">Activitats i Recomenacions</a>
@@ -31,7 +31,7 @@
             </li>
             {% if user.username == '' %}
             <li class="nav-item">
-              <a class="nav-link " href="{% url 'usuario:inicioSesion' %}">Iniciar Seció</a>
+              <a class="nav-link " href="{% url 'usuario:inicioSesion' %}">Iniciar Sessió</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="{% url 'usuario:registro' %}">Registre</a>
