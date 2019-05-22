@@ -1,6 +1,6 @@
 var CALENDAR = function () { 
     var wrap, label,  
-            months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
+            months = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"]; 
  
     function init(newWrap) { 
         wrap     = $(newWrap || "#cal"); 
@@ -13,17 +13,17 @@ var CALENDAR = function () {
  
     function switchMonth(next, month, year) { 
         var curr = label.text().trim().split(" "), calendar, tempYear =  parseInt(curr[1], 10); 
-        month = month || ((next) ? ( (curr[0] === "December") ? 0 : months.indexOf(curr[0]) + 1 ) : ( (curr[0] === "January") ? 11 : months.indexOf(curr[0]) - 1 )); 
+        month = month || ((next) ? ( (curr[0] === "Desembre") ? 0 : months.indexOf(curr[0]) + 1 ) : ( (curr[0] === "Gener") ? 11 : months.indexOf(curr[0]) - 1 )); 
         year = year || ((next && month === 0) ? tempYear + 1 : (!next && month === 11) ? tempYear - 1 : tempYear);
         if (!month) { 
             if (next) { 
-                if (curr[0] === "December") { 
+                if (curr[0] === "Desembre") { 
                     month = 0; 
                 } else { 
                     month = months.indexOf(curr[0]) + 1; 
                 } 
             } else { 
-                if (curr[0] === "January") { 
+                if (curr[0] === "Gener") { 
                     month = 11; 
                 } else { 
                     month = months.indexOf(curr[0]) - 1; 
