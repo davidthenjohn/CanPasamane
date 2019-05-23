@@ -109,7 +109,6 @@ body {
     -webkit-box-shadow:1px 1px 0px #fff inset; 
 } 
 #cal #cal-frame td:not(.nil):hover { 
-    color:#fff; 
     text-shadow: #6C1A07 0px -1px; 
     background:#CD310D; 
     background: -moz-linear-gradient(top, #b32b0c, #cd310d); 

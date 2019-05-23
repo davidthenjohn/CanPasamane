@@ -72,11 +72,11 @@ while (haveDays) {
     for (j = 0; j < 7; j++) { 
         if (i === 0) { 
             if (j === startDay) { 
-                calendar[i][j] = day++; 
+                calendar[i][j] = "<div id="+day+" onclick='clicat(this)'>"+day+++"</div>"; 
                 startDay++; 
             } 
         } else if (day <= daysInMonths[month]) { 
-            calendar[i][j] = day++; 
+            calendar[i][j] = "<div id="+day+" onclick='clicat(this)'>"+day+++"</div>"; 
         } else { 
             calendar[i][j] = ""; 
             haveDays = false; 
@@ -88,15 +88,10 @@ while (haveDays) {
     i++; 
 }
 if (calendar[5]) { 
-    for (i = 0; i < calendar[5].length; i++) { 
-        if (calendar[5][i] !== "") { 
-            calendar[4][i] = "<span>" + calendar[4][i] + "</span><span>" + calendar[5][i] + "</span>"; 
-        } 
-    } 
-    calendar = calendar.slice(0, 5); 
+    calendar = calendar.slice(0, 6); 
 }
 for (i = 0; i < calendar.length; i++) { 
-    calendar[i] = "<tr><td>" + calendar[i].join("</td><td>") + "</td></tr>"; 
+    calendar[i] = "<tr><td onclick='clicatf(this)'>" + calendar[i].join("</td><td onclick='clicatf(this)'>") + "</td></tr>"; 
 } 
 calendar = $("<table>" + calendar.join("") + "</table>").addClass("curr"); 
  
@@ -114,4 +109,23 @@ return createCal.cache[year][month];
         switchMonth : switchMonth, 
         createCal   : createCal 
     }; 
+};
+function clicat (elmnt){
+    if (elmnt.style.backgroundColor == "orange"){
+        elmnt.style.backgroundColor = "white";
+    } else if(elmnt.style.backgroundColor == "red"){
+    }else {
+        elmnt.style.backgroundColor = "orange";
+        document.getElementById("p1").innerHTML = elmnt.id;
+    }
+    
+};
+function clicatf (elmnt){
+    if (elmnt.style.backgroundColor == "orange"){
+        elmnt.style.backgroundColor = "white";
+    } else if(elmnt.style.backgroundColor == "red"){
+    }else {
+        elmnt.style.backgroundColor = "orange";
+    }
+    
 };
