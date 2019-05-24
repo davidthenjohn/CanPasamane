@@ -2,7 +2,7 @@
 {% extends 'bienvenida.html' %}
 
 {% block content %}
-<div id="cal" style="margin-top: 200px"> 
+<div id="cal" style="margin-top: 100px"> 
         <div class="header"> 
             <span class="left button" id="prev"> &lang; </span> 
             <span class="left hook"></span> 
@@ -31,7 +31,23 @@
             </table>
         </div> 
     </div>
-    <p id="p1"></p>
+    <h5>Dies seleccionats:</h5>
+    <div id="p1">
+        
+    </div>
+    <form method="post" action="" style="margin-top: 70px">
+        {% if user.username == '' %}
+        <li>
+          <a  href="{% url 'usuario:inicioSesion' %}">Iniciar Sessió</a>
+        </li>
+        <li >
+          <a  href="{% url 'usuario:registro' %}">Registre</a>
+        </li>
+        {% else %}
+        <button type="submit">Iniciar</button>
+        {% endif %}
+        
+      </form>
     <script>
     var cal = CALENDAR(); 
     cal.init();

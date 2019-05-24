@@ -1,0 +1,10 @@
+.dies{
+    width: 10%;
+    background-color: brown;
+    display: inline;
+}
+#p1{
+    position: relative;
+    height: 75px;
+    border: 2px solid black;
+}

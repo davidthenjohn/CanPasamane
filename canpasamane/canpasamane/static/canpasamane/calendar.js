@@ -72,11 +72,11 @@ while (haveDays) {
     for (j = 0; j < 7; j++) { 
         if (i === 0) { 
             if (j === startDay) { 
-                calendar[i][j] = "<div id="+day+" onclick='clicat(this)'>"+day+++"</div>"; 
+                calendar[i][j] = "<div id="+day+"-"+(month+1)+"-"+year+" onclick='clicat(this)'>"+day+++"</div>"; 
                 startDay++; 
             } 
         } else if (day <= daysInMonths[month]) { 
-            calendar[i][j] = "<div id="+day+" onclick='clicat(this)'>"+day+++"</div>"; 
+            calendar[i][j] = "<div id="+day+"-"+(month+1)+"-"+year+" onclick='clicat(this)'>"+day+++"</div>"; 
         } else { 
             calendar[i][j] = ""; 
             haveDays = false; 
@@ -113,10 +113,20 @@ return createCal.cache[year][month];
 function clicat (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         elmnt.style.backgroundColor = "white";
+        var child = document.getElementById(elmnt.id+"escrit");
+        var element = document.getElementById("p1");
+        element.removeChild(child);
     } else if(elmnt.style.backgroundColor == "red"){
     }else {
         elmnt.style.backgroundColor = "orange";
-        document.getElementById("p1").innerHTML = elmnt.id;
+        var para = document.createElement("p");
+        var node = document.createTextNode(elmnt.id+", ");
+        para.setAttribute('id', elmnt.id+"escrit");
+        para.setAttribute('name', elmnt.id);
+        para.setAttribute('class', "dies");
+        para.appendChild(node);
+        var element = document.getElementById("p1");
+        element.appendChild(para);
     }
     
 };
