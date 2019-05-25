@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from reserva.views import jsonReserves
 
 app_name = 'usuario'
 

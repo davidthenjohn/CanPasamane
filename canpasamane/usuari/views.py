@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.serializers import serialize
+from reserva.models import Reserva
+import json
 
 from .form import ExtendedUserCreationForm, UserProfileForm
 from .models import Usuari
@@ -22,8 +25,18 @@ def contacte(request):
     return render(request, 'contacte.html', {})
 
 def reserves(request):
-    return render(request, 'reserves.html', {})
+    llistaReserves = Reserva.objects.all()
+    llista = [ serializer(x) for x in llistaReserves]
+    
+    context = {'var':llista}
+    return render(request, 'reserves.html', context)
 #home
+def serializer(reserva):
+    dies = ""
+    for x in reserva.data_reserva:
+        dies += str(x)+" "
+    return dies
+
 def home(request):
     return render(request, 'home.html')
 

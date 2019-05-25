@@ -71,12 +71,27 @@ while (haveDays) {
     calendar[i] = []; 
     for (j = 0; j < 7; j++) { 
         if (i === 0) { 
-            if (j === startDay) { 
-                calendar[i][j] = "<div id="+day+"-"+(month+1)+"-"+year+" onclick='clicat(this)'>"+day+++"</div>"; 
+            if (j === startDay) {
+                if((month < 10) && (day < 10)){
+                    calendar[i][j] = "<div id="+year+"-"+0+(month+1)+"-"+0+day+" onclick='clicat(this)'>"+day+++"</div>";
+                }else if ((month >= 10) && (day < 10)){
+                    calendar[i][j] = "<div id="+year+"-"+(month+1)+"-"+0+day+" onclick='clicat(this)'>"+day+++"</div>";
+                }else {
+                    calendar[i][j] = "<div id="+year+"-"+(month+1)+"-"+day+" onclick='clicat(this)'>"+day+++"</div>";
+                }
+                
                 startDay++; 
             } 
         } else if (day <= daysInMonths[month]) { 
-            calendar[i][j] = "<div id="+day+"-"+(month+1)+"-"+year+" onclick='clicat(this)'>"+day+++"</div>"; 
+            if((month < 10) && (day < 10)){
+                calendar[i][j] = "<div id="+year+"-"+0+(month+1)+"-"+0+day+" onclick='clicat(this)'>"+day+++"</div>";
+            }else if ((month >= 10) && (day < 10)){
+                calendar[i][j] = "<div id="+year+"-"+(month+1)+"-"+0+day+" onclick='clicat(this)'>"+day+++"</div>";
+            }else if((month < 10) && (day >= 10)) {
+                calendar[i][j] = "<div id="+year+"-"+0+(month+1)+"-"+day+" onclick='clicat(this)'>"+day+++"</div>";
+            }else{
+                calendar[i][j] = "<div id="+year+"-"+(month+1)+"-"+day+" onclick='clicat(this)'>"+day+++"</div>";
+            }
         } else { 
             calendar[i][j] = ""; 
             haveDays = false; 
@@ -139,3 +154,4 @@ function clicatf (elmnt){
     }
     
 };
+
