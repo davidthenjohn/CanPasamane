@@ -4,11 +4,11 @@
 {% block content %}
 <div id="cal" style="margin-top: 100px"> 
         <div class="header"> 
-            <span class="left button" id="prev"> &lang; </span> 
+            <span class="left button" id="prev" onclick="calcular()"> &lang; </span> 
             <span class="left hook"></span> 
             <span class="month-year" id="label"> June 20&0 </span> 
             <span class="right hook"></span> 
-            <span class="right button" id="next"> &rang; </span>
+            <span class="right button" id="next" onclick="calcular()"> &rang; </span>
         </div> 
         <table id="days">  
             <td>dl</td> 
@@ -32,12 +32,12 @@
         </div> 
     </div>
     <h5>Dies seleccionats:</h5>
-    <div id="p1">
-        
-    </div>
-    <form method="post" action="" style="margin-top: 70px">
+    <form id="addReservaForm" name="addReservaForm" method="post" action="{% url 'usuario:reserva' %}" style="margin-top: 70px">
         {% csrf_token %}
+        <input id="addReserva" name="addReserva">
+        </input>
         {% if user.username == '' %}
+        
         <li>
           <a  href="{% url 'usuario:inicioSesion' %}">Iniciar Sessió</a>
         </li>
@@ -45,11 +45,15 @@
           <a  href="{% url 'usuario:registro' %}">Registre</a>
         </li>
         {% else %}
+        <input id="usuariNom" name="usuariNom"  value="{{ user.first_name }}"> </input>
+        <input id="usuari" name="usuari" value="{{ user.username }}"> </input>
+        <input id="usuariTel" name="usuariTel"  value="{{ user.usuari.telefon }}"> </input>
+        <input id="usuariPais" name="usuariPais"  value="{{ user.usuari.pais }}"> </input>
         <button type="submit">Iniciar</button>
         {% endif %}
       </form>
       <p></p>
-      <p id="prova" onload="prova()">{{ var }}</p>
+      <p hidden id="prova">{{ var }}</p>
     <script>
         var cal = CALENDAR(); 
         cal.init();
@@ -59,19 +63,14 @@
         for (var i = 1; i<division.length; i++){
             if(division[i].includes("2")){
                 var diesagafats = division[i].split(" ");
-                console.log(division[i])
                 for (var j = 0; j<diesagafats.length-1; j++){
                     var d = document.getElementById(diesagafats[j]);
-                    console.log(diesagafats[j])
                     if (d != null){
                         d.style.backgroundColor = "red";
-                    }
-                    
+                    }       
                 }
-            }
-              
-        }
-        
+            }     
+        }   
     </script>
 {% endblock %}
 

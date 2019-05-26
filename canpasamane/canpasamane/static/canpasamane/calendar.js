@@ -6,11 +6,32 @@ var CALENDAR = function () {
         wrap     = $(newWrap || "#cal"); 
         label    = wrap.find("#label"); 
         wrap.find("#prev").bind("click.calendar", function () { switchMonth(false); }); 
-        wrap.find("#next").bind("click.calendar", function () { switchMonth(true);  }); 
+        wrap.find("#next").bind("click.calendar", function () { switchMonth(true);  });
+        wrap.find("#prev").bind("click.calendar", function () { calcular(); }); 
+        wrap.find("#next").bind("click.calendar", function () { calcular();  });  
         label.bind("click", function () { switchMonth(null, new Date().getMonth(), new Date().getFullYear()); });        
         label.click();
     } 
- 
+    function calcular(){
+        var h = document.getElementById("prova");
+        var texta = h.textContent;
+        var division = texta.split("'");
+        for (var i = 1; i<division.length; i++){
+            if(division[i].includes("2")){
+                var diesagafats = division[i].split(" ");
+                console.log(division[i])
+                for (var j = 0; j<diesagafats.length-1; j++){
+                    var d = document.getElementById(diesagafats[j]);
+                    console.log(diesagafats[j])
+                    if (d != null){
+                        d.style.backgroundColor = "red";
+                    }
+                    
+                }
+            }
+              
+        }
+    }
     function switchMonth(next, month, year) { 
         var curr = label.text().trim().split(" "), calendar, tempYear =  parseInt(curr[1], 10); 
         month = month || ((next) ? ( (curr[0] === "Desembre") ? 0 : months.indexOf(curr[0]) + 1 ) : ( (curr[0] === "Gener") ? 11 : months.indexOf(curr[0]) - 1 )); 
@@ -129,20 +150,23 @@ function clicat (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         elmnt.style.backgroundColor = "white";
         var child = document.getElementById(elmnt.id+"escrit");
-        var element = document.getElementById("p1");
+        var element = document.getElementById("addReserva");
         element.removeChild(child);
     } else if(elmnt.style.backgroundColor == "red"){
     }else {
         elmnt.style.backgroundColor = "orange";
         var para = document.createElement("p");
-        var node = document.createTextNode(elmnt.id+", ");
+        var node = document.createTextNode(elmnt.id+",");
         para.setAttribute('id', elmnt.id+"escrit");
         para.setAttribute('name', elmnt.id);
         para.setAttribute('class', "dies");
         para.appendChild(node);
-        var element = document.getElementById("p1");
+        var element = document.getElementById("addReserva");
         element.appendChild(para);
-    }
+        element.appendChild(node);
+        addReservaForm.addReserva.value += elmnt.id +" "
+    }    
+    
     
 };
 function clicatf (elmnt){
@@ -154,4 +178,6 @@ function clicatf (elmnt){
     }
     
 };
+
+
 

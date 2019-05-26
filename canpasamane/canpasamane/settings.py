@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'reserva',
     'usuari',
     'crispy_forms',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,10 @@ STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'static/'),
 )
 STATIC_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)),'collect/')
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'canpasamane@gmail.com'
+EMAIL_HOST_PASSWORD = 'canelaculmerdos25'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

@@ -6,9 +6,11 @@ from django.contrib import messages
 from django.core.serializers import serialize
 from reserva.models import Reserva
 import json
+from django.core.mail import send_mail
 
 from .form import ExtendedUserCreationForm, UserProfileForm
 from .models import Usuari
+from reserva.models import Reserva
 # Create your views here.
 
 #Bienvenida
@@ -25,6 +27,19 @@ def contacte(request):
     return render(request, 'contacte.html', {})
 
 def reserves(request):
+    if request.method == 'POST':
+        dies = request.POST.get('addReserva', '')
+        email = request.POST.get('usuari', '')
+        nom = request.POST.get('usuariNom', '')
+        tel = request.POST.get('usuariTel', '')
+        pais = request.POST.get('usuariPais', '')
+        send_mail(
+            'Nova Reserva',
+            'Dies Solicitats: '+dies+' Mail del solicitant: '+email+ ' Nom del solicitant: '+nom+ 'Telefon: '+tel+ ' Pais: '+pais,
+            'canpasamane@gmail.com',
+            ['canpasamane@gmail.com'],
+            fail_silently=False,
+        )
     llistaReserves = Reserva.objects.all()
     llista = [ serializer(x) for x in llistaReserves]
     
@@ -32,6 +47,7 @@ def reserves(request):
     return render(request, 'reserves.html', context)
 #home
 def serializer(reserva):
+
     dies = ""
     for x in reserva.data_reserva:
         dies += str(x)+" "
@@ -46,7 +62,6 @@ def registro(request):
     if request.method == 'POST':
         form = ExtendedUserCreationForm(request.POST)
         profile_form = UserProfileForm(request.POST)
-
         if form.is_valid() and profile_form.is_valid():
             user = form.save()
 
@@ -77,6 +92,7 @@ def inicioSesion(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
+        
         if user:
             if user.is_active:
                 login(request, user)

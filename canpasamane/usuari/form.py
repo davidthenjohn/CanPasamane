@@ -7,6 +7,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from reserva.models import Reserva
 
 class ExtendedUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -35,3 +36,4 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Usuari
         fields = ('telefon', 'pais')
+
