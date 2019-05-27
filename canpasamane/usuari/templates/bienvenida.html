@@ -14,7 +14,7 @@
   crossorigin="anonymous"></script>
     </head> 
   </head>
-<body>
+<body style="background-color: rgb(132, 175, 132)">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="">
         <a class="navbar-brand" href="{% url 'usuario:bienvenida' %}">Can Pasamane</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,12 +23,6 @@
       
         <div class="navbar-collapse collapse" id="navbarCollapse" >
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'usuario:bienvenida' %}">Inici <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuario:historia' %}">Història</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link " href="{% url 'usuario:activitats' %}">Activitats i Recomenacions</a>
             </li>
@@ -47,6 +41,9 @@
             </li>
             {% else %}
             <li class="nav-item">
+              <a class="nav-link "> Benvingut {{ user.username }}</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link " href="{% url 'logout' %}">Sortir</a>
             </li>
             {% endif %}
@@ -54,11 +51,109 @@
         </div>
       </nav> 
       {% block content %}
-
+      <img style="margin-top: 50px" src="{% static 'canpasamane/images/fons.jpeg' %}" class="img-fluid" alt="Responsive image">
+      <div id="general" style="padding: 5px;
+      width: 80%;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.295);margin: 0 auto;">
+      <p class="text-justify" style="margin-left: 5% ; margin-right: 5%; margin-top: 2%;">Can Pasamane és una casa de poble construïda el segle XVIII a Les Escaules. Un poblet d'aproximadament 100 habitants, a escassos quilòmetres de Figueres, on pots gaudir d’un ambient de calma i tranquil·litat, descansar i desconnectar envoltat de natura. Un lloc perfecte per estar amb família i amics. </p>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="display: flex;
+      justify-content: center;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="margin: 0 auto;width: 50%" src="{% static 'canpasamane/images/casa.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 50%" src="{% static 'canpasamane/images/casaDerrere.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <p class="text-justify" style="margin-left: 5% ; margin-right: 5%; margin-top: 2%">A l’estiu, tan sols treure el cap per la finestra disfruteu del meravellós cant dels ocells, el correnteig de les granotes i del so de l’aigua provinent del torrent de la caula.  Hi trobareu unes magnífiques gorgues d'aigües termals en les quals us hi podreu banyar a l’estiu i els més atrevits a l’hivern!</p>
+      <div id="carouselExampleFade2" class="carousel slide carousel-fade" data-ride="carousel" style="display: flex;
+      justify-content: center;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="margin: 0 auto;width: 60%;" src="{% static 'canpasamane/images/arels.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/escalesgorga.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/gorga1.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/gorga2.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <p class="text-justify" style="margin-left: 5% ; margin-right: 5%; margin-top: 2%;">La casa disposa de dues habitacions dobles i una tercera amb un llit doble més un individual. Dos banys complets, cuina amb tota mena de utensilis, menjador amb una magnifica taula per fer tiberis i una acollidora sala d’estar on hi ha una estufa per passar les tardes d'hivern acompanyats d’un bon joc de taula.</p>
+      <div id="carouselExampleFade3" class="carousel slide carousel-fade" data-ride="carousel" style="display: flex;
+      justify-content: center;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="margin: 0 auto;width: 60%;" src="{% static 'canpasamane/images/cuina.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/menjador.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/escaladins.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/cuinasota.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%;" src="{% static 'canpasamane/images/decoracio.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/hab1.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/hab2.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/hab3.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%;" src="{% static 'canpasamane/images/escalesbaix.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/menjador2.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/sota.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img style="margin: 0 auto;width: 60%" src="{% static 'canpasamane/images/sota2.jpeg' %}" class="d-block w-10" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
       {% endblock %}
-        <footer class="container">
-      <p>Can Pasamane</p>
-    </footer>
   </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
