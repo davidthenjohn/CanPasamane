@@ -19,10 +19,8 @@ var CALENDAR = function () {
         for (var i = 1; i<division.length; i++){
             if(division[i].includes("2")){
                 var diesagafats = division[i].split(" ");
-                console.log(division[i])
                 for (var j = 0; j<diesagafats.length-1; j++){
                     var d = document.getElementById(diesagafats[j]);
-                    console.log(diesagafats[j])
                     if (d != null){
                         d.style.backgroundColor = "red";
                     }
@@ -149,9 +147,11 @@ return createCal.cache[year][month];
 function clicat (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         elmnt.style.backgroundColor = "white";
+        alert("Has borrat el dia "+elmnt.id+" enrecordet de borrar-lo en el cuadre de abaix")
         var child = document.getElementById(elmnt.id+"escrit");
         var element = document.getElementById("addReserva");
         element.removeChild(child);
+        
     } else if(elmnt.style.backgroundColor == "red"){
     }else {
         elmnt.style.backgroundColor = "orange";
@@ -171,6 +171,7 @@ function clicat (elmnt){
 };
 function clicatf (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
+        
         elmnt.style.backgroundColor = "white";
     } else if(elmnt.style.backgroundColor == "red"){
     }else {
