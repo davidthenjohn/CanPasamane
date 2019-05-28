@@ -41,6 +41,7 @@ def contacte(request):
 
 def reserves(request):
     if request.method == 'POST':
+        id_user = request.POST.get('usuariId', '')
         dies = request.POST.get('addReserva', '')
         email = request.POST.get('usuari', '')
         nom = request.POST.get('usuariNom', '')
@@ -48,7 +49,7 @@ def reserves(request):
         pais = request.POST.get('usuariPais', '')
         send_mail(
             'Nova Reserva',
-            'Dies Solicitats: '+dies+' Mail del solicitant: '+email+ ' Nom del solicitant: '+nom+ 'Telefon: '+tel+ ' Pais: '+pais,
+            'ID: '+id_user+' Dies Solicitats: '+dies+' Mail del solicitant: '+email+ ' Nom del solicitant: '+nom+ 'Telefon: '+tel+ ' Pais: '+pais,
             'canpasamane@gmail.com',
             ['canpasamane@gmail.com'],
             fail_silently=False,
