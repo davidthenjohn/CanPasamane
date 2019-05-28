@@ -1,5 +1,23 @@
 {% extends 'bienvenida.html' %}
 
 {% block content %}
-<h1>HOLA</h1>
+<div class="text-center mb-4" style=" padding: 5px; width: 60%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 50px;">
+<p style="font:bold">Pots contactar amb nosaltres o bé pels seguents llocs:</p>
+<p>Mail: canpasamane@gmail.com</p>
+<p>Tel: 608 26 56 76</p>
+<p>O bé pel qüestionari següent:</p>
+<form id="addDubteForm" name="addDubteForm" method="post" action="{% url 'usuario:contacte' %}">
+        {% csrf_token %}
+        <div style="padding-block-end: 0%">
+            <h5 style="margin-top: 10px;">Dubte:</h5>
+            <input required id="addDubte" name="addDubte" style="width: 100%; height: 75px;"></input>
+            <h5 style="margin-top: 10px;">Dades Personals:</h5>
+            <p>Nom:    <input required style="width: 52%;" id="usuariNom" name="usuariNom"  value="{{ user.first_name }}"> </input></p> 
+            <p>Email:  <input required style="width: 52%;" id="usuari" name="usuari" value="{{ user.username }}"> </input></p>
+            <p>Telefon:<input required style="width: 50%;" id="usuariTel" name="usuariTel"  value="{{ user.usuari.telefon }}"> </input></p>
+            <p>Pais:   <input required style="width: 53%;" id="usuariPais" name="usuariPais"  value="{{ user.usuari.pais }}"> </input></p>
+        </div>
+        <button type="submit" class="btn btn-secondary">Enviar Dubte o petició</button>
+      </form>
+</div>
 {% endblock %}

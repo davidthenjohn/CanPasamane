@@ -24,6 +24,19 @@ def activitats(request):
     return render(request, 'Activitats.html', {})
 
 def contacte(request):
+    if request.method == 'POST':
+        dubte = request.POST.get('addDubte', '')
+        email = request.POST.get('usuari', '')
+        nom = request.POST.get('usuariNom', '')
+        tel = request.POST.get('usuariTel', '')
+        pais = request.POST.get('usuariPais', '')
+        send_mail(
+            'Dubte o Contacte',
+            'Mail del solicitant: '+email+ ' Nom del solicitant: '+nom+ 'Telefon: '+tel+ ' Pais: '+pais+' Dubte: '+dubte,
+            'canpasamane@gmail.com',
+            ['canpasamane@gmail.com'],
+            fail_silently=False,
+        )
     return render(request, 'contacte.html', {})
 
 def reserves(request):

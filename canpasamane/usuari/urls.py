@@ -12,6 +12,5 @@ urlpatterns = [
     path('registro', views.registro, name="registro"),
     path('activitats/', views.activitats, name="activitats"),
     path('contacte/', views.contacte, name="contacte"),
-    path('historia/', views.historia, name="historia"),
     path('reserva/', views.reserves, name="reserva"),
 ]

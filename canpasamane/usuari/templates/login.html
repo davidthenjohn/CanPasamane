@@ -1,19 +1,19 @@
 {% extends 'bienvenida.html' %}
 
 {% block content %}
-<div class="text-center mb-4">
-    <h1 class="h3 mb-3 font-weight-normal">Can Pasamane</h1>
-  </div>
-<form method="post" action="" style="margin-top: 70px">
+<div class="text-center mb-4" style=" padding: 5px; width: 50%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 200px;">
+  <div style="width: 60%; margin: 0 auto;">
+  <h1 class="h3 mb-3 font-weight-normal">Can Pasamane</h1>
+    <form method="post" action="" style="margin-top: 70px" class="form-signin">
     {% csrf_token %}
     {# A more "HTML" way of creating the login form#}
     <div>
-      <input type="text" name="username" placeholder="email">
+      <input class="form-control" type="text" name="username" placeholder="email">
     </div>
     <div>
-      <input type="password" name="password" placeholder="Contrasenya">
+      <input class="form-control" type="password" name="password" placeholder="Contrasenya">
     </div>
-    <button type="submit">Iniciar</button>
+    <button style="margin-top: 50px" type="submit">Iniciar</button>
     {% if messages %}
   <ul class="messages">
   {% for message in messages %}
@@ -22,4 +22,7 @@
   </ul>
 {% endif %}
   </form>
+</div>  
+</div>
+<div style="height: 140px"></div>
 {% endblock %}
