@@ -25,7 +25,7 @@ SECRET_KEY = 'nzi_-kynh+$1jdz@9p#m01z*rn0@eouqs#)nlr7oev9avl5b_@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','www.canpasamane.com','canpasamane-env.bqi3ummqad.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -76,17 +76,28 @@ WSGI_APPLICATION = 'canpasamane.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CanPasamane',
-        'USER': 'postgres',
-        'PASSWORD': 'DavidJuan020717',
-        'HOST': 'localhost',
-        'PORT':5432,
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT':os.environ['RDS_PORT'],
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'CanPasamane',
+            'USER': 'postgres',
+            'PASSWORD': 'DavidJuan020717',
+            'HOST': 'localhost',
+            'PORT':5432,
+        }
+    }   
 
 
 # Password validation
@@ -131,7 +142,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'static/'),
 )
-STATIC_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)),'collect/')
+STATIC_ROOT = os.path.join(BASE_DIR,'www','collect')
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

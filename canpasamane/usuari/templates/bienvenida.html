@@ -3,7 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>CanPasamane</title>
+    <link rel="shortcut icon" href="{% static 'canpasamane/images/Iconp.png' %}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'canpasamane/calendar.css' %}" /> 
     <link rel="stylesheet" href="{% static 'canpasamane/reserves.css' %}" /> 
@@ -14,9 +16,9 @@
   crossorigin="anonymous"></script>
     </head> 
   </head>
-<body style="background-color: rgb(132, 175, 132)">
+<body style="background-color: rgb(132, 175, 132); ">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="">
-        <a class="navbar-brand" href="{% url 'usuario:bienvenida' %}">Can Pasamane</a>
+        <a class="navbar-brand" href="{% url 'usuario:bienvenida' %}"> <img style="width: 20%; height: 20%; border-radius: 30%" src="{% static 'canpasamane/images/Iconp.png' %}" alt="Can Pasamane"> </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +51,9 @@
             {% endif %}
           </ul>
         </div>
-      </nav> 
+      </nav>
+      <div id="wrap">
+      <div  id="main">
       {% block content %}
       <img style="margin-top: 50px" src="{% static 'canpasamane/images/fons.jpeg' %}" class="img-fluid" alt="Les Escaules">
       <div id="general" style="padding: 5px;
@@ -147,6 +151,8 @@
       </div>
     </div>
       {% endblock %}
+      </div>
+    </div>
       <footer class="footer text-center bg-dark">
           <div class="container">
             <div class="row">
@@ -163,14 +169,33 @@
               <!-- Footer Social Icons -->
               <div class="col-lg-4 mb-5 mb-lg-0" style="color: white">
                 <h4 class="text-uppercase mb-4">Xarxes Socials</h4>
-                <a href="https://www.google.com/maps/place/Carrer+de+Figueres,+25,+17723,+Girona/@42.317121,2.8833728,122m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x12ba90e1b1a71837:0x2c4e908b1821b5f5!2s17723+Les+Escaules,+Girona!3b1!8m2!3d42.3203518!4d2.8821457!3m4!1s0x12ba911d95541e41:0x7526d12744205201!8m2!3d42.31712!4d2.88392">Facebook</a>
-                <a href="https://www.instagram.com/canpasamane/?hl=es">Instagram</a>
+                <a href="https://www.instagram.com/canpasamane/?hl=es">
+                  <div style="width: 32px; height: 32px; background-color: white; border-radius:15%; margin: 0 auto ">
+                    <img  src="{% static 'canpasamane/images/glyph-logo_May2016.png' %}" alt="instagram" style="width: 90%; height: 90%; margin-top: 5%">
+                  </div>
               </div>
-      
+            </a>
             </div>
           </div>
         </footer>
   </body>
+  <style>
+  html, body {
+    height: 100%;
+  }
+  #wrap{
+    min-height: 100%;
+  }
+  #main {
+    overflow: auto;
+    padding-bottom: 150px
+  }
+  footer{
+    position: relative;
+    margin-top: -150px;
+    clear: both;
+  }
+  </style>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
