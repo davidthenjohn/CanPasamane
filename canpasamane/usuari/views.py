@@ -23,6 +23,9 @@ def historia(request):
 def activitats(request):
     return render(request, 'Activitats.html', {})
 
+def casa(request):
+    return render(request, 'casa.html', {})
+
 def contacte(request):
     if request.method == 'POST':
         dubte = request.POST.get('addDubte', '')

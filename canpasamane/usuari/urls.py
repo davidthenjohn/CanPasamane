@@ -13,4 +13,5 @@ urlpatterns = [
     path('activitats/', views.activitats, name="activitats"),
     path('contacte/', views.contacte, name="contacte"),
     path('reserva/', views.reserves, name="reserva"),
+    path('casa/', views.casa, name="casa"),
 ]

@@ -2,6 +2,25 @@
 {% extends 'bienvenida.html' %}
 
 {% block content %}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 <div class="text-center mb-4" style=" padding: 5px; width: 60%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 50px;">
 <div>
     <div id="cal"> 
@@ -31,9 +50,11 @@
                     <tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr> 
                 </tbody> 
             </table>
+
+            
         </div> 
     </div>
-    <table style="font-weight: bold; border: 3px solid; margin: 0 auto ">
+    <table  style="font-weight: bold; border: 3px solid; margin: 0 auto ">
         <tr style="border: 2px solid "><td></td><td>Preu Temporada Baixa</td><td style="width: 10%"></td><td>Preu Temporada Alta</td></tr> 
         <tr style="border: 2px solid "><td>2 nits</td><td>350€</td><td></td><td>400€</td></tr> 
         <tr style="border: 2px solid "><td>3 nits</td><td>525€</td><td></td><td>600€</td></tr> 
@@ -42,7 +63,8 @@
         <tr style="border: 2px solid "><td>6 nits</td><td>950€</td><td></td><td>1100€</td></tr> 
         <tr style="border: 2px solid "><td>7 nits</td><td>1125€</td><td></td><td>1300€</td></tr>  
 </table>
-<p>Temporada Alta: Setmana Santa, de 15 de Juliol a 15 de Setembre i del 6 de Decembre al 6 de Gener</p>
+
+<p style="margin-top: 20px">Temporada Alta: Setmana Santa, de 20 de Juny a 15 de Setembre i del 6 de Decembre al 6 de Gener</p>
 <p>Temporada Baixa: Resta de l'any</p>
 <p>Casa disponible per un màxim de 7 persones</p>
 </div>
@@ -75,6 +97,7 @@
       <p></p>
       <p hidden id="prova">{{ var }}</p>
     </div>
+
     <script>
         var cal = CALENDAR(); 
         cal.init();

@@ -1,25 +1,36 @@
 {% extends 'bienvenida.html' %}
 
 {% block content %}
-<div class="text-center mb-4"  style=" padding: 5px; width: 30%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 100px;">
-<form method="POST" action="{% url 'usuario:registro' %}" style="margin-top: 70px">
-        <h1 class="h3 mb-3 font-weight-normal">Can Pasamane</h1>
+<div class="text-center mb-4"  style=" padding: 5px; width: 50%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 100px;">
+    <div  style="width: 60%; margin: 0 auto;">
+            <h1 class="h3 mb-3 font-weight-normal">Can Pasamane</h1>
+    <form method="POST" action="{% url 'usuario:registro' %}" style="margin-top: 70px">
+
     {% csrf_token %}
-    <div class="form__InputContainer">Nom:</div>
-    <div class="form__InputContainer">{{form.first_name}}</div>
-    <div class="form__InputContainer">Email:</div>
-    <div class="form__InputContainer">{{form.email}}</div>
-    <div class="form__InputContainer">Contrasenya:</div>
-    <div class="form__InputContainer">{{form.password1}}</div>
-    <div class="form__InputContainer">Repeteix Contrasenya:</div>
-    <div class="form__InputContainer">{{form.password2}}</div>
-    <div class="form__InputContainer">Telefon:</div>
-    <div class="form__InputContainer">{{profile_form.telefon}}</div>
-    <div class="form__InputContainer">Pais:</div>
-    <div class="form__InputContainer">{{profile_form.pais}}</div>
+    <div >Nom:</div>
+    <div>{{form.first_name}}</div>
+    <div>Email:</div>
+    <div>{{form.email}}</div>
+    <div>Contrasenya:</div>
+    <div>{{form.password1}}</div>
+    <div>Repeteix Contrasenya:</div>
+    <div>{{form.password2}}</div>
+    <div>Telefon:</div>
+    <div>{{profile_form.telefon}}</div>
+    <div>Pais:</div>
+    <div>{{profile_form.pais}}</div>
     <button style="margin-top: 50px" type="submit">Registrar</button>
     {{ form.non_field_errors }}
 </form>
 </div>
+</div>
+<style>
+input {
+    width: 100%;
+}
+select {
+    width: 100%;
+}
+</style>
 {% endblock %}
 

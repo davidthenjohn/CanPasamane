@@ -147,7 +147,7 @@ return createCal.cache[year][month];
 function clicat (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         elmnt.style.backgroundColor = "white";
-        alert("Has borrat el dia "+elmnt.id+" enrecordet de borrar-lo en el cuadre de abaix")
+        $('#exampleModal').modal()
         var child = document.getElementById(elmnt.id+"escrit");
         var element = document.getElementById("addReserva");
         element.removeChild(child);
