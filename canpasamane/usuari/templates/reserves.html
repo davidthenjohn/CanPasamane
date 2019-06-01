@@ -6,22 +6,21 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Alerta!</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
+              Has eliminat un dia, tingues en compte treure'l del text de sota
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">D'acort</button>
             </div>
           </div>
         </div>
       </div>
-<div class="text-center mb-4" style=" padding: 5px; width: 60%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 50px;">
+<div class="text-center mb-4" style=" padding: 5px; width: 70%; border-radius: 5px; background-color: rgba(255, 255, 255, 0.295); margin: 0 auto;margin-top: 50px;">
 <div>
     <div id="cal"> 
         <div class="header"> 
@@ -74,6 +73,7 @@
         <input required id="addReserva" name="addReserva" style="width: 100%">
         </input>
         {% if user.username == '' %}
+        <p style="margin-top: 20px; margin-bottom: 20px"> Per poder realitzar la reserva iniciï sessió.</p>
         <li>
           <a  href="{% url 'usuario:inicioSesion' %}">Iniciar Sessió</a>
         </li>
@@ -88,8 +88,8 @@
             <p hidden >Id:    <input required style="width: 52%;" id="usuariId" name="usuariId"  value="{{ user.usuari.id }}"> </input></p> 
             <p>Nom:    <input required style="width: 52%;" id="usuariNom" name="usuariNom"  value="{{ user.first_name }}"> </input></p> 
             <p>Email:  <input required style="width: 52%;" id="usuari" name="usuari" value="{{ user.username }}"> </input></p>
-            <p>Telefon:<input required style="width: 50%;" id="usuariTel" name="usuariTel"  value="{{ user.usuari.telefon }}"> </input></p>
-            <p>Pais:   <input required style="width: 53%;" id="usuariPais" name="usuariPais"  value="{{ user.usuari.pais }}"> </input></p>
+            <p>Telèfon:<input required style="width: 50%;" id="usuariTel" name="usuariTel"  value="{{ user.usuari.telefon }}"> </input></p>
+            <p>País:   <input required style="width: 53%;" id="usuariPais" name="usuariPais"  value="{{ user.usuari.pais }}"> </input></p>
         </div>
         <button type="submit" class="btn btn-secondary">Enviar Reserva</button>
         {% endif %}

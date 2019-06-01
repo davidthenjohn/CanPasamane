@@ -1,0 +1,245 @@
+{% extends 'bienvenida.html' %}
+
+{% block content %}
+{% load static %}
+<div id="general" style="padding: 5px;
+      width: 80%;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.295);margin: 0 auto;">
+  <section class="login">
+    <div class="container2 h-100">
+      <div class="row justify-content-md-center">
+        <div class=" my-auto col-md-auto">
+          <div class="-content mx-auto">
+            <a href="/"><img class="logo_style" style="width:40%; padding-bottom: 10%;"
+                src="{%static 'icons/logo.png'%}"></a>
+            <div class="login-page">
+              <div class="form_privacy">
+                <p><strong>Condicions d'&uacute;s</strong></p>
+                <p>Et donem la benvinguda a CanPasamane&nbsp;<br /> <br /> Aquestes Condicions d'&uacute;s regeixen el teu
+                  &uacute;s de CanPasamane i proporcionen informaci&oacute; sobre el Servei de CanPasamane, descrit m&eacute;s
+                  endavant. Quan crees un compte d'CanPasamane o fas &uacute;s de la plataforma, acceptes aquestes
+                  condicions.&nbsp;</p>
+                <p><strong>El Servei de CanPasamane</strong></p>
+                <p>Acceptem proporcionar-te el Servei d'CanPasamane. El Servei inclou tots els productes, les funcions, les
+                  aplicacions, els serveis, les tecnologies i el software de CanPasamane que oferim per contribuir a la
+                  missi&oacute; de CanPasamane, connectar-te amb les persones i les coses que t'importen. El Servei est&agrave;
+                  constitu&iuml;t pels aspectes seg&uuml;ents (el &ldquo;Servei&rdquo;):</p>
+                <ul>
+                  <li><strong>Oferir oportunitats personalitzades per crear, connectar, comunicar, descobrir i
+                      compartir.</strong><br /> Cada persona &eacute;s diferent, i per aix&ograve; volem refor&ccedil;ar
+                    les teves relacions per mitj&agrave; d'experi&egrave;ncies compartides que t'importin de veritat.
+                    Amb aquest objectiu creem sistemes per intentar entendre qui i qu&egrave; us importa a tu i als
+                    altres, i utilitzar aquesta informaci&oacute; per ajudar-te a crear, trobar, unir-te i compartir
+                    experi&egrave;ncies que siguin importants per a tu. Una part d'aix&ograve; &eacute;s destacar
+                    contingut, funcions, ofertes i comptes en qu&egrave; puguis estar interessat, i oferir-te maneres
+                    perqu&egrave; experimentis CanPasamane en funci&oacute; de les coses que tu i altres persones feu dins i
+                    fora de la plataforma.</li>
+                  <li><strong>Fomentar un entorn positiu, inclusiu i segur.</strong><br /> Desenvolupem i utilitzem
+                    eines, i oferim recursos als membres de la nostra comunitat que ajuden a fer les seves
+                    experi&egrave;ncies m&eacute;s positives i inclusives, incloent quan creiem que poden necessitar
+                    ajuda. Tamb&eacute; tenim equips i sistemes que treballen per combatre abusos i infraccions de les
+                    nostres Condicions i pol&iacute;tiques, aix&iacute; com els comportaments nocius o enganyosos.
+                    Utilitzem tota la informaci&oacute; que tenim, incloent la teva, per intentar mantenir la nostra
+                    plataforma segura.</li>
+                  <li><strong>Desenvolupar i utilitzar tecnologies que ens ajuden a servir constantment a la nostra
+                      comunitat en expansi&oacute;.</strong><br /> Organitzar i analitzar informaci&oacute; per a la
+                    nostra comunitat en creixement &eacute;s fonamental en el nostre Servei. Una gran part del nostre
+                    Servei consisteix a crear i utilitzar tecnologies innovadores que ens ajuden a personalitzar,
+                    protegir i millorar el nostre Servei en una escala incre&iuml;blement gran per a una &agrave;mplia
+                    comunitat global. Tecnologies com la intel&middot;lig&egrave;ncia artificial i l'aprenentatge
+                    autom&agrave;tic ens permeten aplicar processos complexos a trav&eacute;s del nostre Servei.
+                    Aquestes tecnologies automatitzades tamb&eacute; ens ajuden a garantir la funcionalitat i la
+                    integritat del Servei.</li>
+                </ul>
+                <p><strong>La Pol&iacute;tica de dades</strong></p>
+                <p>Proporcionar el nostre Servei requereix recollir i utilitzar la teva informaci&oacute;.
+                  La&nbsp;Pol&iacute;tica de dades&nbsp;explica com recollim, utilitzem. Tamb&eacute; explica les
+                  nombroses maneres en qu&egrave; pots controlar la teva informaci&oacute;, incloent des de
+                  la&nbsp;configuraci&oacute; de privadesa i seguretat de CanPasamane.</p>
+                <p>&nbsp;</p>
+                <p><strong>Els teus compromisos</strong></p>
+                <p>A canvi del nostre comprom&iacute;s de proporcionar el Servei, requerim que et comprometis al
+                  seg&uuml;ent envers nosaltres.</p>
+                <p><strong>Qui pot fer servir CanPasamane.</strong>&nbsp;Volem que el nostre Servei sigui tan obert i inclusiu
+                  com sigui possible, per&ograve; tamb&eacute; volem que estigui protegit i sigui segur i conforme a la
+                  llei. Per aquest motiu, necessitem que acceptis algunes restriccions per tal de formar part de la
+                  comunitat de CanPasamane.&nbsp;</p>
+                <ul>
+                  <li>Has de tenir com a m&iacute;nim 14&nbsp;anys.</li>
+                  <li>No pots tenir prohibit rebre qualsevol aspecte del nostre Servei en virtut de la legislaci&oacute;
+                    aplicable o utilitzar serveis relacionats amb els pagaments si apareixes en una llista de parts
+                    denegades.</li>
+                  <li>No hem d'haver desactivat el teu compte anteriorment per infringir la llei o qualsevol de les
+                    nostres pol&iacute;tiques.</li>
+                  <li>No pots haver estat condemnat per delictes sexuals.</li>
+                </ul>
+                <p><strong>Com no pots fer servir CanPasamane.</strong>&nbsp;Proporcionar un Servei segur i obert a una
+                  &agrave;mplia comunitat requereix que tots hi posem de part nostra.</p>
+                <ul>
+                  <li><strong>No pots suplantar altres persones o facilitar informaci&oacute; incorrecta.</strong><br />
+                    No has de divulgar la teva identitat a CanPasamane, per&ograve; has de proporcionar-nos informaci&oacute;
+                    veritable i actualitzada (inclosa la informaci&oacute; de registre). Aix&iacute; mateix, no pots
+                    fer-te passar per una altra persona i no pots crear un compte per a un tercer tret que comptis amb
+                    el seu perm&iacute;s expl&iacute;cit per fer-ho.</li>
+                  <li><strong>No pots dur a terme cap acci&oacute; il&middot;legal, enganyosa o fraudulenta, o per a una
+                      finalitat il&middot;legal o no autoritzada.</strong></li>
+                  <li><strong>No pots infringir (o ajudar o animar altres persones a infringir) aquestes Condicions o
+                      les nostres pol&iacute;tiques, incloses, en particular, les&nbsp;</strong><strong>Normes
+                      comunit&agrave;ries de CanPasamane</strong><strong>, la&nbsp;</strong><strong>Pol&iacute;tica de la
+                      plataforma de CanPasamane</strong></a><strong>i les&nbsp;</strong><strong>Normes relatives a la
+                      m&uacute;sica</strong><strong>.</strong>&nbsp;Consulta el&nbsp; servei d'ajuda &nbsp;per obtenir
+                    informaci&oacute; sobre com pots denunciar contingut o conductes.</li>
+                  <li><strong>No pots fer res per interferir o perjudicar el funcionament esperat del Servei.</strong>
+                  </li>
+                  <li><strong>No pots intentar crear comptes, accedir ni recopilar informaci&oacute; de maneres no
+                      autoritzades.</strong><br /> Aix&ograve; inclou crear comptes o recollir informaci&oacute; de
+                    manera autom&agrave;tica sense el nostre perm&iacute;s expl&iacute;cit.</li>
+                  <li><strong>No pots intentar comprar, vendre o transferir cap aspecte del teu compte (incl&ograve;s el
+                      teu nom d'usuari) o sol&middot;licitar, recopilar o utilitzar credencials d'inici de sessi&oacute;
+                      o ins&iacute;gnies d'altres usuaris.</strong></li>
+                  <li><strong>No pots publicar informaci&oacute; privada o confidencial ni fer res que infringeixi els
+                      drets d'una altra persona, inclosos els de la propietat intel&middot;lectual.</strong><br />
+                    Obt&eacute;n m&eacute;s informaci&oacute;, incloent com denunciar contingut que consideres que
+                    infringeix els teus drets de propietat intel&middot;lectual,&nbsp;<a href="">en aquest
+                      enlla&ccedil;</a>.</li>
+                  <li><strong>No pots fer servir un nom de domini o una adre&ccedil;a URL al teu nom d'usuari sense el
+                      nostre consentiment previ per escrit.</strong></li>
+                </ul>
+                <p><strong>Permisos que ens atorgues.</strong>&nbsp;Com a part del nostre acord, tamb&eacute; ens
+                  concedeixes permisos que necessitem per proporcionar el Servei.&nbsp;</p>
+                <ul>
+                  <li><strong>No reclamem la propietat del teu contingut, per&ograve; ens atorgues una llic&egrave;ncia
+                      per utilitzar-lo.</strong><br /> Res est&agrave; canviant en relaci&oacute; amb els teus drets en
+                    el teu contingut. No reclamem la propietat del teu contingut que publiques en el Servei o a
+                    trav&eacute;s d'aquest. En lloc d'aix&ograve;, quan comparteixes, publiques o penges contingut que
+                    est&agrave; protegit per drets de propietat intel&middot;lectual (com ara fotos o v&iacute;deos) en
+                    el nostre Servei o en relaci&oacute; amb aquest, per la present tu ens atorgues una llic&egrave;ncia
+                    no exclusiva, sense drets d'autor, transferible, amb la possibilitat d'atorgar sub llic&egrave;ncies
+                    i aplicable globalment per allotjar, utilitzar, distribuir, modificar, executar, copiar, reproduir o
+                    mostrar p&uacute;blicament, traduir i crear obres derivades del teu contingut (consistentment amb la
+                    teva configuraci&oacute; de la privadesa i l'aplicaci&oacute;). Pots terminar aquesta
+                    llic&egrave;ncia en qualsevol moment eliminant el teu contingut o compte. No obstant, el contingut
+                    continuar&agrave; apareixent si el vas compartir amb altres i aquests no l'han eliminat. Per obtenir
+                    m&eacute;s informaci&oacute; sobre com utilitzem informaci&oacute; i com controlar o eliminar el teu
+                    contingut, revisa la&nbsp;<a href="">Pol&iacute;tica de dades</a>i visita el&nbsp;<a href="">servei
+                      d'ajuda de CanPasamane</a>.</li>
+                  <li>continguts i els seguiments d'altres comptes, les accions sobre contingut patrocinat i seguiment
+                    de comptes patrocinats nom&eacute;s poden ser visualitzats per les persones amb perm&iacute;s per
+                    visualitzar aquell contingut o seguiment. Tamb&eacute; respectarem la teva configuraci&oacute;
+                    d'anuncis. Pots obtenir m&eacute;s informaci&oacute; sobre la teva configuraci&oacute;
+                    d'anuncis&nbsp;<a href="">aqu&iacute;</a>.</li>
+                  <li><strong>Acceptes que podem descarregar i instal&middot;lar actualitzacions del Servei al teu
+                      dispositiu.</strong></li>
+                </ul>
+                <p>&nbsp;</p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>Drets addicionals que ens reservem</strong></p>
+                <ul>
+                  <li>Si selecciones un nom d'usuari o un identificador semblant per al teu compte, podem canviar-lo si
+                    creiem que &eacute;s convenient o necessari (per exemple, si infringeix els drets de la propietat
+                    intel&middot;lectual d'un tercer o suplanta un altre usuari).</li>
+                  <li>Si fas servir contingut protegit per drets de la propietat intel&middot;lectual que ens pertany i
+                    est&agrave; disponible en el nostre Servei (per exemple, imatges, dissenys, v&iacute;deos o sons que
+                    oferim que afegeixes a contingut que crees o comparteixes), mantindrem tots els drets relatius al
+                    nostre contingut (per&ograve; no del teu).</li>
+                  <li>Nom&eacute;s pots fer servir la nostra propietat intel&middot;lectual i les nostres marques o
+                    marques similars de la manera que permeten expl&iacute;citament les nostres&nbsp;<a href="">Normes
+                      de marca</a>, o amb el nostre perm&iacute;s previ per escrit.</li>
+                  <li>Has d'obtenir el nostre perm&iacute;s per escrit, o una autoritzaci&oacute; en virtut d'una
+                    llic&egrave;ncia de codi obert, per modificar, descompilar o intentar extreure el nostre codi font
+                    de qualsevol altra manera, aix&iacute; com per crear-ne obres derivades.</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p><strong>Eliminaci&oacute; de contingut i desactivaci&oacute; o cancel&middot;laci&oacute; del
+                    compte</strong></p>
+                <ul>
+                  <li>Podem eliminar qualsevol contingut o informaci&oacute; que comparteixes en el Servei si creiem que
+                    infringeix aquestes Condicions d'&uacute;s, les nostres pol&iacute;tiques (incloses les
+                    nostres&nbsp;<a href="">Normes comunit&agrave;ries de CanPasamane</a>), o si ens ho requereix la llei. Ens
+                    podem negar a proporcionar-te o deixar de proporcionar-te la totalitat o una part del Servei
+                    (incl&uacute;s cancel&middot;lar o desactivar del teu compte) immediatament si: clarament,
+                    seriosament o repetidament infringeixes aquestes Condicions d'&uacute;s, les nostres
+                    pol&iacute;tiques (incloses les&nbsp;<a href="">Normes comunit&agrave;ries de CanPasamane</a>), si vulneres
+                    repetidament els drets de la propietat intel&middot;lectual d'altres persones, o b&eacute; si ens ho
+                    requereix la llei. Si prenem mesures per eliminar el teu contingut per infringir les nostres Normes
+                    comunit&agrave;ries, o desactivar o cancel&middot;lar el teu compte, t'ho notificarem segons
+                    correspongui. Si creus que el teu compte s'ha cancel&middot;lat per error o si el vols desactivar o
+                    eliminar amb car&agrave;cter permanent, consulta el nostre&nbsp;<a href="">servei d'ajuda</a>.</li>
+                  <li>El contingut que eliminis pot continuar estant disponible durant un per&iacute;ode de temps
+                    limitat en c&ograve;pies de seguretat, i seguir&agrave; sent visible on altres l&rsquo;hagin
+                    compartit. Aquest par&agrave;graf i la secci&oacute; inferior titulada &ldquo;El nostre acord i
+                    qu&egrave; passa si no acceptem alguna disposici&oacute;&rdquo; continuaran aplicant fins i tot
+                    despr&eacute;s que el teu compte sigui cancel&middot;lat o eliminat.</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>El nostre acord i qu&egrave; passa si no ens posem d'acord</strong></p>
+                <p><strong>El nostre acord.</strong></p>
+                <ul>
+                  <li>L'&uacute;s que fas de la m&uacute;sica en el Servei tamb&eacute; est&agrave; subjecte a les
+                    nostres&nbsp;<a href="">Normes relatives a la m&uacute;sica</a>, i el teu &uacute;s de la nostra API
+                    est&agrave; subjecte a la nostra&nbsp;<a href="">Pol&iacute;tica de la plataforma</a>. Si utilitzes
+                    determinades funcions o serveis relacionats, se&rsquo;t proporcionar&agrave; l'oportunitat
+                    d'acceptar condicions addicionals, que tamb&eacute; passaran a formar part del nostre acord. Per
+                    exemple, si fas servir funcions de pagament, se't demanar&agrave; que acceptis les&nbsp;<a
+                      href="">Condicions de pagaments de la comunitat</a>. Si qualssevol d'aquelles condicions entra en
+                    conflicte amb aquest acord, aquestes altres condicions prevaldran.</li>
+                  <li>Si qualsevol aspecte d'aquest acord result&eacute;s inaplicable, la resta romandr&agrave; en
+                    vigor.</li>
+                  <li>Qualsevol esmena o ren&uacute;ncia relativa al nostre acord haur&agrave; de ser per escrit i
+                    signat per nosaltres. En cas que fallem en aplicar qualsevol aspecte d&rsquo;aquest acord, no es
+                    considerar&agrave; una ren&uacute;ncia.</li>
+                  <li>Ens reservem tots els drets que no t'h&agrave;gim concedit expl&iacute;citament.</li>
+                </ul>
+                <p><br /> <strong>Qui t&eacute; drets en virtut del present acord.</strong></p>
+                <ul>
+                  <li>Aquest acord no concedeix drets a cap tercera part.</li>
+                  <li>No pots transferir els drets o les obligacions d'aquest acord sense el nostre consentiment.</li>
+                  <li>Els nostres drets i obligacions poden assignar-se a altres. Per exemple, aix&ograve; podria passar
+                    si la nostra propietat canvi&eacute;s (com en una fusi&oacute;, una adquisici&oacute; o una venda
+                    d'actius) o per llei.</li>
+                </ul>
+                <p><br /> <strong>Qui &eacute;s responsable si passa alguna cosa.</strong></p>
+                <ul>
+                  <li>Utilitzarem habilitat i cura raonables en proporcionar el nostre Servei i mantenir un entorn
+                    segur, protegit i lliure d'errors, per&ograve; no podem garantir que el nostre Servei sempre
+                    funcioni sense interrupcions, retards o defectes. Sempre que h&agrave;gim actuat amb habilitat i
+                    cura raonable, no acceptarem cap responsabilitat per: p&egrave;rdues que no siguin causades pel
+                    nostre incompliment d'aquestes Condicions o de les nostres accions; p&egrave;rdues que no siguin
+                    raonablement previsibles per tu o nosaltres en el moment de subscriure les presents Condicions;
+                    qualsevol contingut ofensiu, inapropiat, obsc&egrave;, il&middot;legal o que resulti de qualsevol
+                    forma objectable, publicat per altres que pots trobar en el nostre Servei; i esdeveniments
+                    m&eacute;s enll&agrave; del nostre control raonable.</li>
+                  <li>L'anterior no exclou ni limita la nostra responsabilitat per mort, lesions personals o
+                    representacions fraudulentes causades per la nostra neglig&egrave;ncia. Tampoc exclou ni limita la
+                    nostra responsabilitat per qualssevol altres coses que la llei no ens permeti fer.</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p><strong>Com gestionarem els conflictes.</strong><br /> <br /> Si ets consumidor i resideixes
+                  habitualment en un dels Estats membre de la Uni&oacute;&nbsp;Europea, les lleis d'aquell Estat membre
+                  aplicaran a qualsevol reclamaci&oacute;, pretensi&oacute; o conflicte que tinguis contra nosaltres que
+                  derivi o estigui relacionat amb aquestes Condicions (&ldquo;reclamaci&oacute;&rdquo;), i podr&agrave;s
+                  resoldre la teva reclamaci&oacute; en qualsevol tribunal competent de l'Estat membre que tingui
+                  jurisdicci&oacute; sobre aquesta. En tots els altres casos, acceptes que la reclamaci&oacute; ha de
+                  ser resolta en un tribunal competent a la Rep&uacute;blica d'Irlanda i que la legislaci&oacute;
+                  irlandesa regeixi les presents Condicions i qualsevol reclamaci&oacute;, amb independ&egrave;ncia de
+                  les disposicions relatives a conflictes de lleis.&nbsp;<br /> <br /> <strong>Material no
+                    sol&middot;licitat.</strong><br /> <br /> Sempre apreciem els teus comentaris o altres suggeriments,
+                  per&ograve; podem utilitzar-los sense cap mena de restriccions o obligaci&oacute; de compensar-te per
+                  ells, i no tenim cap obligaci&oacute; de mantenir-los confidencials.&nbsp;</p>
+                <p>&nbsp;</p>
+                <p><strong>Actualitzaci&oacute; d'aquestes Condicions</strong></p>
+                <p>Pot ser que canviem el nostre Servei i pol&iacute;tiques, i pot ser que necessitem fer canvis en
+                  aquestes Condicions perqu&egrave; reflecteixin acuradament el nostre Servei i pol&iacute;tiques. Tret
+                  que la llei disposi una altra cosa, et notificarem (per exemple, a trav&eacute;s del nostre Servei)
+                  almenys 30&nbsp;dies abans de dur a terme canvis en aquestes Condicions i et donarem l'oportunitat de
+                  revisar-les abans que entrin en vigor. Llavors, si continues utilitzant el Servei, quedar&agrave;s
+                  subjecte a les Condicions actualitzades. Si no vols acceptar aquestes o qualssevol altres Condicions
+                  actualitzades, pots eliminar el teu compte&nbsp;</a>aqu&iacute;.&nbsp;</p>
+              </div>
+
+            </div>
+  </section>
+</div>
+  {% endblock %}

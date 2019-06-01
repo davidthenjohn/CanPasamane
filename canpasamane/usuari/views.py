@@ -17,6 +17,9 @@ from reserva.models import Reserva
 def bienvenida(request):
     return render(request, 'bienvenida.html', {})
 
+def politiques(request):
+    return render(request, 'politiques.html', {})
+
 def historia(request):
     return render(request, 'historia.html', {})
 

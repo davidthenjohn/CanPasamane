@@ -1,3 +1,5 @@
+
+//aquesta funció en general crea un calandari perfectament equilibrat amb més, any i dia(any de transpas)
 var CALENDAR = function () { 
     var wrap, label,  
             months = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"]; 
@@ -12,6 +14,7 @@ var CALENDAR = function () {
         label.bind("click", function () { switchMonth(null, new Date().getMonth(), new Date().getFullYear()); });        
         label.click();
     } 
+    //aquesta funció fa l'efecte de ajax, comprova els dies que hi ha reservats a la base de dades i els pinta de color vermell
     function calcular(){
         var h = document.getElementById("prova");
         var texta = h.textContent;
@@ -86,6 +89,7 @@ $('#label').text(calendar.label);
             createCal.cache[year] = {}; 
         }
         i = 0; 
+//Aquest while a part de crear els dies de cada més assigna la id perque pugui identificar cada dia i el seu valor
 while (haveDays) { 
     calendar[i] = []; 
     for (j = 0; j < 7; j++) { 
@@ -144,6 +148,7 @@ return createCal.cache[year][month];
         createCal   : createCal 
     }; 
 };
+//Aquesta funció pinta o despinta els cuadres que vol reservar el client
 function clicat (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         elmnt.style.backgroundColor = "white";
@@ -169,6 +174,7 @@ function clicat (elmnt){
     
     
 };
+
 function clicatf (elmnt){
     if (elmnt.style.backgroundColor == "orange"){
         
