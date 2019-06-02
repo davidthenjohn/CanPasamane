@@ -10,11 +10,82 @@
 <h5> Cuina</h5>
 <p>A la Cuina/Rebedor hi teniu a la vostre disposició un forn, encimera, vitro d'inducció, rentaplats, nevera, congelador, campana estractora, microones i una màquina de café (Nespreso). A més de tots els utensilis per cuinar i menjar. També, a la mateixa cuina, hi podem trobar una taula plagable de paret juntament amb dos tamburets per pendre alguna cosa, afegir que la cuina està perfectament il·luminada amb llum natural gràcies a la finestra de sobre la pica i el ventall del lateral de la porta.  </p>
 <h5>Menjador</h5>
-<p>El menjador gaudeix d'una taula extensible que hi caben fins a 12 comensals (persones), amb un armari cantoner original del segle XIX, amb un magnífic rellotge de paret juntament amb una televisió i un climatitzador</p>
+<p>El menjador hi tronem una taula extensible, que hi caben fins a 12 persones, amb un armari cantoner original del segle XIX, amb un magnífic rellotge de paret juntament amb una televisió i un climatitzador</p>
 <h5>Cuarto de bany</h5>
 <p>Un cuarto de bany amb un dutxa de plat, un lavabo i un bater, amb un armari empotrat.</p>
 <h5>Habitació</h5>
-<p>L'habitació del primer pis és una habitació totalment rustica, amb un llit doble, un armari empotrat, dues teuletes de nit amb les seves lampares, un climatitzador i una finestra que don a la part de derrera de la casa on es poden gaudir de les vistes que ens ofereix la natura de l'entorn. </p>
+<p>L'habitació del primer pis és una habitació totalment rustica, amb un llit doble, un armari empotrat, dues tauletes de nit amb les seves lampares, un climatitzador i una finestra que don a la part de derrera de la casa on es poden gaudir de les vistes que ens ofereix la natura de l'entorn. </p>
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
+
+  <!--Controls-->
+  <div class="controls-top" style="margin-left: 44%">
+    <a class="black-text" href="#multi-item-example" data-slide="prev"><----<i class="fas fa-angle-left fa-3x pr-3">  </i></a>
+    <a class="black-text" href="#multi-item-example" data-slide="next">----><i class="fas fa-angle-right fa-3x pl-3"></i></a>
+  </div>
+  <!--/.Controls-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+
+    <!--First slide-->
+    <div class="carousel-item active">
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="{% static 'canpasamane/images/cuina.jpeg' %}"
+            alt="Card image cap">
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="{% static 'canpasamane/images/menjador2.jpeg' %}"
+            alt="Card image cap">
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="{% static 'canpasamane/images/menjadorTot.jpeg' %}"
+            alt="Card image cap">
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="{% static 'canpasamane/images/escaladins.jpeg' %}"
+            alt="Card image cap">
+        </div>
+      </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+           <img class="img-fluid" src="{% static 'canpasamane/images/lab2.jpeg' %}" 
+            alt="Card image cap">
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img class="img-fluid" src="{% static 'canpasamane/images/hab1.jpeg' %}"
+            alt="Card image cap">
+        </div>
+      </div>
+
+    </div>
+    <!--/.Second slide-->
+  </div>
+  <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
 <h3>Pis Superior</h3>
 <h5>Habitació doble</h5>
 <p>Aquesta habitació destaca per ser una de les més grans de la casa i per tenir una finestra arran de terra, juntament amb un llit de matrimoni, dues tauletes i armaris.</p>
@@ -32,4 +103,14 @@
 <p>Un petit pati exterior que disposa d'una pica original del segle XIX formada amb pedra calcaria de "la Caula" i una magnífica barbacoa per fer tota mena de tiberis.</p>
 </div>
 </div>
+<style>
+@media (min-width: 768px) {
+.carousel-multi-item-2 .col-md-3 {
+float: left;
+width: 25%;
+max-width: 100%; } }
+
+.carousel-multi-item-2 .card img {
+border-radius: 2px; }
+</style>
 {% endblock %}
